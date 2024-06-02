@@ -35,8 +35,9 @@ Para simplificar la determinación de los ángulos del robot pincher, se analiza
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/79000e86-9d96-4d57-b128-908165ca75f3)
 
-Una manera de abordar este problema es emplear la regla del paralelogramo para la suma de vectores. Al dibujar el vector de la herramienta (tool) y el vector \(L\), que representa el desplazamiento de la muñeca, se puede obtener el vector de la muñeca como la diagonal del paralelogramo formado por estos dos vectores. De esta forma, se reconoce que el vector de la muñeca es el mismo vector de la herramienta menos un desplazamiento \(L\) en la dirección de \(a\).
+Una forma de resolver este problema es aplicar la regla del paralelogramo para sumar vectores. Si dibujamos el vector tool y el vector \( L \) que representa el desplazamiento de la muñeca, podemos obtener el vector de la muñeca como la diagonal del paralelogramo formado por estos dos vectores. Así, se reconoce que el vector de la muñeca es el mismo vector tool menos un desplazamiento \( L \) en la dirección de \( a \).
 
-\[ P_w = P_{TCP} - L_{4a} \]
+\[ P_w = P_{TCP} - I_{4a} \]
 
-Para determinar el ángulo 1, se utiliza la geometría del triángulo formado por el eje del robot, el punto de contacto con el suelo y el centro de la cámara. Aplicando el teorema de Pitágoras y la ley de cosenos, se puede obtener el valor del ángulo 1 en función de las dimensiones del robot y la distancia al objetivo. Esta metodología permite calcular de manera precisa los ángulos necesarios para posicionar la herramienta del robot en la ubicación deseada, facilitando así el control y la ejecución de tareas específicas.
+Para determinar el ángulo 1, se utiliza la geometría del triángulo formado por el eje del robot, el punto de contacto con el suelo y el centro de la cámara. Se aplica el teorema de Pitágoras y la ley de cosenos para obtener el valor del ángulo 1 en función de las dimensiones del robot y la distancia al objetivo.
+
