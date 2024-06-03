@@ -48,7 +48,6 @@ Se examina la vista lateral del robot para determinar los ángulos theta2 y thet
 
 Se halla un pw2 auxiliar para hallar estos angulos mas facilmente
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/ee42bfb3-7c64-471e-9074-60a8c129ccb3)
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/ba2a997f-8825-4b2c-a1e9-e008657706be)
 
 Con este PW2 se halla primero el ángulo theta3 con la ley del coseno
