@@ -2,7 +2,6 @@
 
 # Integrantes: 
 -Joyner Stiven Caballero Abril.
--Juan Felipe Triana Aguilera
 
 # Introduccion: 
 
@@ -143,3 +142,22 @@ Durante la ejecución, se mide y muestra el tiempo total de la tarea en la conso
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/b9ecbc36-df52-4f1d-a58d-5bff178e1985)
 
+El bloque final del código se asegura de que la función joint_publisher() se ejecute solo cuando el script se ejecuta como programa principal. Utilizando la condición if __name__ == '__main__':, se verifica que el script no se esté importando como módulo. Dentro de este bloque, se utiliza un try para intentar ejecutar la función principal después de una breve pausa de 1 segundo (time.sleep(1)), permitiendo así que todas las inicializaciones necesarias se completen. Si se produce una interrupción de ROS (rospy.ROSInterruptException), el except captura esta excepción y simplemente la ignora con pass, asegurando que el programa termine de manera limpia sin realizar ninguna acción adicional.
+
+# Resultado
+
+En el siguiente video podemos ver los resultados obtenidos:
+
+https://www.youtube.com/watch?v=DuJOaEzIpIs
+
+Para medir los dibujos realizados por el robot, se puede establecer una regla de proporción entre la longitud real y la longitud en píxeles. Si la tabla mide aproximadamente 50 cm y la imagen tiene una longitud de 273750 píxeles, entonces cada 10 píxeles equivalen a 1.826 mm en la realidad. Utilizando esta proporción y las herramientas de medición de píxeles que ofrece el programa Paint, que proporcionan la longitud en horizontal y vertical en píxeles, es posible calcular la distancia en píxeles entre dos puntos de la imagen. Aplicando el teorema de Pitágoras a estas mediciones, se puede convertir la distancia en píxeles a milímetros. Esta metodología permite obtener medidas precisas de los distintos dibujos realizados por el robot en términos de longitud real, asegurando así una representación exacta de las dimensiones en el mundo físico y finalmente, mediante las longitudes teóricas con las que se planteo el ejercicio se obtiene el error relativo para cada una de las medidas.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/ca095c55-2c85-4425-874e-cfec2a6b8f59)
+
+# Conclusiones
+
+1 Utilidad de la Cinemática Inversa: La cinemática inversa es una herramienta esencial para la programación del robot Pincher. Permite definir trayectorias complejas mediante ecuaciones simples, facilitando el diseño de movimientos precisos y controlados con un bajo consumo de recursos computacionales. Esta capacidad es crucial para aplicaciones que requieren alta precisión y eficiencia.
+
+2 Limitaciones Estructurales: A pesar de las ventajas de la cinemática inversa, es importante considerar las limitaciones estructurales del robot Pincher. Durante el movimiento, el Pincher puede generar vibraciones que afectan la precisión de las trayectorias. Estas vibraciones son una consecuencia de la rigidez y el diseño del robot, y deben ser tenidas en cuenta al planificar y ejecutar movimientos.
+
+3 Errores en Geometrías Complejas: Al comparar las dimensiones teóricas con las reales en tareas que involucran geometrías complejas, como las letras, se observa un mayor porcentaje de error. Este error es más significativo en comparación con figuras más simples, como círculos y líneas. Sin embargo, incluso en estas figuras simples, se pueden notar imperfecciones en las geometrías curvas, como en el caso del círculo, donde un lado puede ser ligeramente más largo que el otro.
