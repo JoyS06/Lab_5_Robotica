@@ -144,6 +144,8 @@ Durante la ejecución, se mide y muestra el tiempo total de la tarea en la conso
 
 El bloque final del código se asegura de que la función joint_publisher() se ejecute solo cuando el script se ejecuta como programa principal. Utilizando la condición if __name__ == '__main__':, se verifica que el script no se esté importando como módulo. Dentro de este bloque, se utiliza un try para intentar ejecutar la función principal después de una breve pausa de 1 segundo (time.sleep(1)), permitiendo así que todas las inicializaciones necesarias se completen. Si se produce una interrupción de ROS (rospy.ROSInterruptException), el except captura esta excepción y simplemente la ignora con pass, asegurando que el programa termine de manera limpia sin realizar ninguna acción adicional.
 
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/3bcdc515-ac4b-4cce-bf9f-08b71bddf9b6)
+
 # Resultado
 
 En el siguiente video podemos ver los resultados obtenidos:
