@@ -53,6 +53,8 @@ Se halla un pw2 auxiliar para hallar estos angulos mas facilmente
 Con este PW2 se halla primero el ángulo theta3 con la ley del coseno
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/7cd558a7-3adf-4fa5-90ea-89c0504608b5)
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/545ff05b-6eda-47b3-b32c-2e621bb0886d)
+
 
 Se procede a determinar el ángulo theta2 analizando la vista lateral del sistema. Para ello, se emplea la ley de cosenos junto con los ángulos alpha y psi definidos en la figura adjunta. Este enfoque permite derivar una expresión para theta2 en términos de las longitudes de los eslabones y los ángulos mencionados, facilitando así la resolución del problema de cinemática inversa al proporcionar una relación matemática clara y precisa entre estos parámetros
 
