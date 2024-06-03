@@ -77,6 +77,69 @@ Para obtener los puntos, se colocaron las ubicaciones en AutoCAD sobre las traye
 
 # Analisis del codigo 
 
+Luego de importar las librerías, se procede a crear el modelo de Denavit-Hartenberg estándar (DHstd) del robot Phantom X Pincher utilizando la librería roboticstoolbox. Se definen las cuatro articulaciones revolutas del manipulador, especificando los parámetros DH correspondientes: el desplazamiento d, el ángulo alpha, el desplazamiento a y el ángulo theta.
 
+Además, se utilizan las librerías cv2 y matplotlib.pyplot para mostrar y visualizar las imágenes que representan las trayectorias del marcador, permitiendo así una mejor comprensión y análisis del comportamiento del robot.
 
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/d24c63ed-4d87-4fe0-8be6-df7c46b2d47c)
+
+En la función de cinemática inversa, se definen las longitudes de los eslabones del robot (l1 y l2), junto con algunas variables auxiliares (xaux y zaux) que se utilizan repetidamente durante la ejecución de la función. Los valores de las distintas articulaciones se calculan en términos de arcotangentes, comenzando por el ángulo de la tercera articulación (theta3), seguido del cálculo del ángulo de la segunda articulación (theta2) y luego el ángulo de la primera articulación (theta1). Finalmente, se calcula el ángulo de la cuarta articulación (theta4), que no se resuelve de manera geométrica. Todos estos valores se devuelven como una lista.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/d0cec4de-f05f-45ef-8a1b-2b8219e38407)
+
+La función enviarPosicion se encarga de enviar distintas posiciones al controlador del manipulador Phantom X Pincher. A continuación, se detallan los pasos y componentes de esta función:
+
+1 Creación del objeto Publisher: Se crea un objeto Publisher de ROS que se encarga de enviar mensajes al tópico /joint_trajectory para controlar el robot. Este objeto se inicializa con el tipo de mensaje JointTrajectory.
+
+2 Inicialización del nodo de ROS: Se inicia un nodo de ROS llamado joint_publisher, que permite la comunicación entre el código de Python y el robot.
+
+3 Ciclo de iteración sobre los puntos: Se utiliza un bucle for para iterar sobre la lista de puntos ingresados como parámetro. Cada punto se descompone en sus coordenadas X, Y y Z.
+
+4 Creación de objetos de mensajes:
+
+- Se crea un objeto state de tipo JointTrajectory que contendrá el mensaje a publicar.
+- Se crea un objeto point de tipo JointTrajectoryPoint que representará un punto específico en la trayectoria de las articulaciones.
+
+5 Cálculo de la cinemática inversa: La función cinemInversa se utiliza para obtener los valores de las articulaciones correspondientes a las coordenadas X, Y y Z del punto actual. Estos valores se almacenan en la variable posActual.
+
+6 Ajuste de la posición actual: Dependiendo del valor de la variable flag, se ajusta el valor de la cuarta articulación en posActual.
+
+7 Actualización del mensaje:
+
+- Los valores de las articulaciones se asignan a la variable point.
+- La variable point se añade a la lista de puntos en state.
+- El mensaje state se publica utilizando el objeto Publisher creado anteriormente.
+
+8 Pausa del programa: Finalmente, se suspende la ejecución del programa brevemente utilizando rospy.sleep(3) para dar tiempo al robot a ejecutar la instrucción.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/2fcde105-1fe7-418d-a7f1-0668c192e252)
+
+Similar a la función anterior, enviarAngulos crea un objeto Publisher con el tópico /joint_trajectory, utilizando el mensaje de tipo JointTrajectory. A continuación, se inicializa el nodo de ROS y se crea el objeto state de la clase JointTrajectory. Dentro de este objeto state, se define un objeto point de la clase JointTrajectoryPoint.
+
+Los ángulos recibidos como parámetros de entrada en la función se asignan a la variable positions del objeto point. Este objeto point se añade posteriormente al objeto state, que contiene la trayectoria completa de las articulaciones del robot. Finalmente, el objeto state se publica mediante el Publisher, y se deja un breve tiempo de espera para asegurar la correcta ejecución de los comandos por parte del robot.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/b85a9a88-3cf3-43f7-aa02-576e142e70b5)
+
+La función joint_publisher establece la posición de home para el robot y realiza una serie de movimientos mediante la función enviarPosicion. A continuación, se describe el proceso en detalle:
+
+1 Establecimiento de la posición de home: Se define una posición de home para el robot en la variable posicionHome. Esta posición se envía al robot utilizando la función enviarAngulos.
+
+2 Movimientos iniciales:
+
+- Se define una lista de puntos que representan el espacio de trabajo del robot.
+- La función enviarPosicion se utiliza para mover el robot a estos puntos. Primero, el robot se lleva al punto donde está el marcador, lo recoge y luego se levanta para volver a la posición de home.
+
+3 Ciclo while para interacción con el usuario:
+
+- Se inicia un ciclo while que permanecerá activo mientras el programa esté en ejecución.
+- Durante este ciclo, se muestra un menú al usuario con diferentes opciones de tareas a realizar: dibujar el espacio de trabajo, dibujar las iniciales de los nombres, dibujar un círculo, dibujar una X sobre el círculo, o salir del programa.
+- El usuario debe ingresar el número correspondiente a la tarea deseada, y el programa ejecutará la función correspondiente.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/8e7e9122-d6bf-4853-8c7a-3f68986361c3)
+
+Para el desarrollo de distintas tareas, se sigue un procedimiento similar en cada caso. Primero, se muestra una imagen que ilustra al usuario la trayectoria teórica que seguirá el robot. Luego, se define una lista de puntos que representa el recorrido que debe seguir el marcador, con cada uno de estos puntos especificado en sus coordenadas X, Y y Z. Esta lista de puntos se envía a la función enviarPosicion, que se encarga de controlar el recorrido del robot.
+
+Durante la ejecución, se mide y muestra el tiempo total de la tarea en la consola. Una vez completado el recorrido, el robot regresa a la posición de home. Este procedimiento asegura que el robot siga las trayectorias deseadas de manera precisa y eficiente, proporcionando retroalimentación en tiempo real al usuario sobre la duración de cada tarea.
+
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/b9ecbc36-df52-4f1d-a58d-5bff178e1985)
 
