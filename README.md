@@ -75,6 +75,8 @@ Para obtener los puntos, se colocaron las ubicaciones en AutoCAD sobre las traye
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/95a6f086-ef26-40f3-8d7d-4fc64d6db554)
 
+# Analisis del codigo 
+
 
 
 
