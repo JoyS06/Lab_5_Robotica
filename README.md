@@ -34,7 +34,7 @@ Para simplificar la determinación de los ángulos del robot pincher, se analiza
 
 Una forma de resolver este problema es aplicar la regla del paralelogramo para sumar vectores. Si dibujamos el vector tool y el vector \( L \) que representa el desplazamiento de la muñeca, podemos obtener el vector de la muñeca como la diagonal del paralelogramo formado por estos dos vectores. Así, se reconoce que el vector de la muñeca es el mismo vector tool menos un desplazamiento \( L \) en la dirección de \( a \).
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/d41c826a-ca85-4c1e-8eac-f90c35fa5724)
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/f5b7ffc2-ebc0-48ea-8ecd-0294152dedc4)
 
 Para determinar el ángulo 1, se utiliza la geometría del triángulo formado por el eje del robot, el punto de contacto con el suelo y el centro de la cámara. Se aplica el teorema de Pitágoras y la ley de cosenos para obtener el valor del ángulo 1 en función de las dimensiones del robot y la distancia al objetivo.
 
