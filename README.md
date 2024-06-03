@@ -67,11 +67,11 @@ Ahora se obtiene Theta2
 
 Para planificar las trayectorias, inicialmente se realizó un dibujo del espacio de trabajo utilizando el software Dynamixel Wizard. Se tomaron las medidas precisas del área de trabajo, y posteriormente se trazaron dos círculos con estas dimensiones en AutoCAD. Este enfoque permitió determinar con exactitud la ubicación de los puntos clave donde se llevarían a cabo las figuras deseadas. La combinación de estos métodos asegura una correcta representación y planificación de las trayectorias del robot, facilitando la ejecución precisa de las tareas programadas.
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/3986e053-aed6-414e-81ee-06b924609476)
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/69019ba3-49d4-4a8d-99ad-201bf40a0364)
 
 Para obtener los puntos, se colocaron las ubicaciones en AutoCAD sobre las trayectorias de las figuras y se extrajeron las coordenadas necesarias. Estas coordenadas se pasaron a Python como una lista de vectores con tres componentes (x, y, z). Las coordenadas z se ajustaron manualmente: cuando el robot estaba dibujando, el valor de z se mantenía en cero, y cuando había un salto en la trayectoria, el valor de z se incrementaba para levantar el marcador y evitar el dibujo. Para las letras, se utilizaron puntos específicos. Para el círculo, se estableció una posición inicial y, mediante una función, se trazó el círculo incrementando gradualmente el ángulo. Las figuras obtenidas se pueden observar en la siguiente imagen.
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/95a6f086-ef26-40f3-8d7d-4fc64d6db554)
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/3567a1a0-26ec-4992-a5a9-ed0fa8acd9a2)
 
 # Analisis del codigo 
 
