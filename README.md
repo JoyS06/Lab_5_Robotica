@@ -40,7 +40,6 @@ Para determinar el ángulo 1, se utiliza la geometría del triángulo formado po
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/df7fbddb-6502-4ede-a870-b7f64fc6427d)
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/3bc0116f-1f7b-467c-aad4-bd766bfe5edd)
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/f847e058-b197-4276-93a3-cbfd58a5b0ae)
 
 Se examina la vista lateral del robot para determinar los ángulos theta2 y theta3, utilizando la geometría del sistema y las posiciones relativas de los componentes para calcular con precisión estos ángulos. 
