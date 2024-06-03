@@ -38,7 +38,7 @@ Una forma de resolver este problema es aplicar la regla del paralelogramo para s
 
 Para determinar el ángulo 1, se utiliza la geometría del triángulo formado por el eje del robot, el punto de contacto con el suelo y el centro de la cámara. Se aplica el teorema de Pitágoras y la ley de cosenos para obtener el valor del ángulo 1 en función de las dimensiones del robot y la distancia al objetivo.
 
-![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/df7fbddb-6502-4ede-a870-b7f64fc6427d)
+![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/9b7c84ca-466f-4b5b-ac77-79580fbaf591)
 
 ![image](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/f847e058-b197-4276-93a3-cbfd58a5b0ae)
 
