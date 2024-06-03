@@ -12,21 +12,19 @@ La cinemática inversa es un problema fundamental en robótica que consiste en d
 El laboratorio incluye una serie de ejercicios prácticos que abarcan desde el desarrollo e implementación del modelo cinemático inverso hasta la operación del robot en tareas de escritura sobre una superficie plana. A lo largo del informe se describirán los pasos seguidos, los resultados obtenidos y las conclusiones derivadas de la experimentación. Además, se proporcionarán detalles sobre los requisitos técnicos, el uso de herramientas específicas y la interacción con el usuario mediante una interfaz HMI (Human-Machine Interface).
 
 # Objetivos:
-• Determinar el modelo cinemático inverso del robot Phantom X.
-• Generar trayectorias de trabajo a partir del modelo cinemático inverso del robot.
-• Implementar el modelo cinemático inverso del robot en MATLAB o Python.
-• Operar el robot usando ROS a partir de trayectorias generadas en MATLAB o Python.
+Determinar el modelo cinemático inverso del robot Phantom X.
+
+Generar trayectorias de trabajo a partir del modelo cinemático inverso del robot.
+
+Implementar el modelo cinemático inverso del robot en MATLAB o Python.
+
+Operar el robot usando ROS a partir de trayectorias generadas en MATLAB o Python.
 
 # Desarrollo
 
 ![robot general](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/bb264ba2-4ac9-4769-a004-101123d33fef)
 
 El primer paso para la elaboración de este laboratorio fue tomar las medidas de los eslabones del robot Phantom X Pincher. Para ello, se midió la distancia de junta a junta utilizando un calibrador. 
-
-L1 = 10.5 cm 
-L2 = 10.5 cm 
-L3 = 6.5 cm 
-L4 = 8 cm 
 
 ![robot general dh](https://github.com/JoyS06/Lab_5_Robotica/assets/105253521/6ed81aef-5e16-4265-8f5b-dca26d63d667)
 
